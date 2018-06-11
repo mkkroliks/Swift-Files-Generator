@@ -148,7 +148,7 @@ struct FilesGenerator {
 
                     switch step {
                     case .\(lowerCaseName):
-                        return navigationTo\(name)
+                        return navigationTo\(name)()
                     default:
                         return NextFlowItems.none
                     }
@@ -160,6 +160,7 @@ struct FilesGenerator {
                     self.rootViewController.pushViewController(vc, animated: true)
                     return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: vc, nextStepper: vm))
                 }
+            }
             """)
     }
 
