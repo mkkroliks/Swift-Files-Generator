@@ -129,7 +129,7 @@ struct FilesGenerator {
     }
 }
 
-let fileGenerator = try FilesGenerator(screenNameSingularForm: "AllAward", modelName: "Product")
+let fileGenerator = try FilesGenerator(screenNameSingularForm: "ShopDetailsAward", modelName: "Product")
 try fileGenerator.generate()
 
 
