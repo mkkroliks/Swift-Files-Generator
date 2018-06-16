@@ -133,8 +133,16 @@ struct FilesGenerator {
                 var root: Presentable {
                     return rootViewController
                 }
+            
+                private var rootViewController: BaseNavigationController = BaseNavigationController(barVisibility: .hidden)
 
-                private var rootViewController: UINavigationController = UINavigationController()
+                //private lazy var rootViewController: DogDetailsViewController = {
+                    //let vm = \(nameViewModel)(services: services)
+                    //let vc = \(nameViewController)(viewModel: vm)
+                    //vc.modalTransitionStyle = .crossDissolve
+                    //vc.modalPresentationStyle = .overCurrentContext
+                    //return vc
+                //}()
 
                 private let services: AppServices
 
