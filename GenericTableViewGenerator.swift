@@ -129,7 +129,10 @@ struct FilesGenerator {
     }
 }
 
-let fileGenerator = try FilesGenerator(screenNameSingularForm: "ShopDetailsAward", modelName: "Product")
+let screenName = CommandLine.arguments[1]
+let modelName = CommandLine.arguments[2]
+
+let fileGenerator = try FilesGenerator(screenNameSingularForm: screenName, modelName: modelName)
 try fileGenerator.generate()
 
 

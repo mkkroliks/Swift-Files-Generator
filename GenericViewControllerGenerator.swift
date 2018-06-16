@@ -181,5 +181,4 @@ struct FilesGenerator {
 let screenName = CommandLine.arguments[1]
 
 let fileGenerator = try FilesGenerator(screenName: screenName)
-//let fileGenerator = try FilesGenerator(screenName: "ClubSubscription")
 try fileGenerator.generate()
