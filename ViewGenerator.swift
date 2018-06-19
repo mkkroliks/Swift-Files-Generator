@@ -11,7 +11,7 @@ struct FilesGenerator {
     init(viewName: String, subclassName: String) throws {
 
         self.nameView = viewName
-        self.nameViewModel = viewName + "ViewModel"
+        self.nameViewModel = viewName + "Model"
         self.nameSubclass = subclassName
         
 //        folder = try FileSystem().currentFolder.createSubfolder(named: nameView)

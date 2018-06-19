@@ -134,9 +134,9 @@ struct FilesGenerator {
                     return rootViewController
                 }
             
-                private var rootViewController: BaseNavigationController = BaseNavigationController(barVisibility: .hidden)
+                private var rootViewController: BaseNavigationController = BaseNavigationController(barVisibility: .cream)
 
-                //private lazy var rootViewController: DogDetailsViewController = {
+                //private lazy var rootViewController: \(nameViewController) = {
                     //let vm = \(nameViewModel)(services: services)
                     //let vc = \(nameViewController)(viewModel: vm)
                     //vc.modalTransitionStyle = .crossDissolve
@@ -167,6 +167,10 @@ struct FilesGenerator {
                     let vc = \(nameViewController)(viewModel: vm)
                     self.rootViewController.pushViewController(vc, animated: true)
                     return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: vc, nextStepper: vm))
+                }
+            
+                func navigationTo\(name)() -> NextFlowItems {
+                    return NextFlowItems.one(flowItem: NextFlowItem(nextPresentable: rootViewController, nextStepper: rootViewController.viewModel))
                 }
             }
             """)

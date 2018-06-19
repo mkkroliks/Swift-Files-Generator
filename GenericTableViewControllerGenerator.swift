@@ -107,7 +107,7 @@ struct FilesGenerator {
             }
             
             extension \(nameTableViewCell): Configurable {
-        
+            
                 func configure(with viewModel: AnyObject) {
                     guard let viewModel = viewModel as? \(nameTableCellViewModel) else { return }
             
@@ -122,14 +122,23 @@ struct FilesGenerator {
         //  \(fileName).swift
         //  DogWalkTrophy
         //
-        //  Created by Maciej Krolikowski on 23/04/2018.
+        //  Created by Maciej Krolikowski on \(todaysDateString()).
         //  Copyright © 2018 Maciej Krolikowski. All rights reserved.
         //
         """
     }
+    
+    func todaysDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: Date())
+    }
 }
 
-let fileGenerator = try FilesGenerator(screenNameSingularForm: "AllAward", modelName: "Product")
+let screenName = CommandLine.arguments[1]
+let modelName = CommandLine.arguments[2]
+
+let fileGenerator = try FilesGenerator(screenNameSingularForm: screenName, modelName: modelName)
 try fileGenerator.generate()
 
 
